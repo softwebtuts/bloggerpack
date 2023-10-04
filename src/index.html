@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html b:css="false" b:defaultwidgetversion="2" b:js="true" b:layoutsVersion="3" b:responsive="true" b:templateVersion="{{version}}" expr:class='data:blog.languageDirection + " " + data:blog.pageType' expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
+  <head>
+    <b:include data="blog" name="head-c" />
+
+    <b:if cond="!data:view.isLayoutMode">
+      <!-- prettier-ignore -->
+      <b:skin>{{config.cdataStart}}/*
+			* Name : {{theme_info.name}}
+			* Version : {{theme_info.version}}
+			* Release Date : {{releasedDate}}
+			* Author : {{theme_info.author}}
+			* Author Site : {{theme_info.demo}}*/
+
+			/*-- Customize Options (Start) --
+			@@include('../src/defaultVariables.html')
+			-- Customize Options (End) --*/
+
+			/*-- CSS Variables --*/
+			@@include('../build/styles/styles.min.css')
+			{{config.cdataEnd}}
+			</b:skin>
+      <b:else />
+      <b:template-skin>@@include("../build/styles/layout.css")</b:template-skin>
+    </b:if>
+    <b:if cond="data:widgets.AdSense.first or data:blog.adsenseClientId">
+      <b:tag name="script" async="async" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+    </b:if>
+    <b:if cond="data:blog.analyticsAccountNumber">
+      <b:include cond="data:blog.analyticsAccountNumber" data="blog" name="google-analytics" />
+    </b:if>
+    <b:defaultmarkups>
+      <b:defaultmarkup type="Common">
+        <b:includable id="head-c">@@include('../src/defaultmarkups/common/x-wikipedia.html')</b:includable>
+      </b:defaultmarkup>
+
+      <b:defaultmarkup type="AdSense">@@include('../src/defaultmarkups/AdSense.html')</b:defaultmarkup>
+      <b:defaultmarkup type="BlogArchive">@@include('../src/defaultmarkups/BlogArchive.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Blog">@@include('../src/defaultmarkups/Blog.html')</b:defaultmarkup>
+      <b:defaultmarkup type="ContactForm">@@include('../src/defaultmarkups/ContactForm.html')</b:defaultmarkup>
+      <b:defaultmarkup type="FeaturedPost">@@include('../src/defaultmarkups/FeaturedPost.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Header">@@include('../src/defaultmarkups/Header.html')</b:defaultmarkup>
+      <b:defaultmarkup type="HTML,Text">@@include('../src/defaultmarkups/HTML-Text.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Image">@@include('../src/defaultmarkups/Image.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Label">@@include('../src/defaultmarkups/Label.html')</b:defaultmarkup>
+      <b:defaultmarkup type="LinkList">@@include('../src/defaultmarkups/LinkList.html')</b:defaultmarkup>
+      <b:defaultmarkup type="PageList">@@include('../src/defaultmarkups/PageList.html')</b:defaultmarkup>
+      <b:defaultmarkup type="PopularPosts">@@include('../src/defaultmarkups/PopularPosts.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Profile">@@include('../src/defaultmarkups/Profile.html')</b:defaultmarkup>
+      <b:defaultmarkup type="BlogSearch">@@include('../src/defaultmarkups/BlogSearch.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Stats">@@include('../src/defaultmarkups/Stats.html')</b:defaultmarkup>
+      <b:defaultmarkup type="TextList">@@include('../src/defaultmarkups/TextList.html')</b:defaultmarkup>
+      <b:defaultmarkup type="Wikipedia">@@include('../src/defaultmarkups/Wikipedia.html')</b:defaultmarkup>
+    </b:defaultmarkups>
+  </head>
+
+  <body>
+    <b:class cond="data:view.isHomepage" name="is-home" />
+    <b:class cond="data:view.isMultipleItems" name="is-multiple" />
+    <b:class cond="data:view.isSingleItem" name="is-single" />
+    <b:class cond="data:view.isPage" name="is-page" />
+    <b:class cond="data:view.isPost" name="is-post" />
+    <b:class cond="data:view.isError" name="is-multiple is-error" />
+    <b:class cond="data:blog.isMobileRequest" name="is-mobile" />
+    <header class="header-area">
+      <b:section id="header" class="header" showaddelement="yes" name="HEADER" maxwidgets="3" />
+    </header>
+    <main class="main">
+      <b:section id="main" class="main" showaddelement="yes" name="MAIN">
+        <b:widget id="Blog1" locked="true" title="Blog Posts" type="Blog" />
+      </b:section>
+    </main>
+
+    <aside class="sidebar">
+      <b:section id="sidebar" class="sidebar" showaddelement="yes" name="SIDEBAR" maxwidgets="3" />
+    </aside>
+
+    <footer class="footer">
+      <b:section id="footer" class="footer" showaddelement="yes" name="FOOTER" maxwidgets="3" />
+    </footer>
+    <b:section id="hidden-widgets" class="hidden" maxwidgets="10"></b:section>
+    <!-- prettier-ignore -->
+    <b:tag name='script' type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'/>
+    <!-- prettier-ignore -->
+    <b:tag name='script'>{{config.cdataStart:alt}}@@include('../build/scripts/bundled.min.js'){{config.cdataEnd:alt}}</b:tag>
+  </body>
+</html>
