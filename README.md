@@ -16,7 +16,7 @@ This Project is maintained by [Muhammad Muzammil](https://softwebtuts.com).
 
 If you want to learn blogger template development using BloggerPack, you can visit my YouTube channel and my website for articles and videos.
 
-Videos found on my YouTube channel will guide you through every single thing about blogger template development.
+Videos found on my YouTube channel will guide you through every single step of blogger template development.
 
 **Follow the links below:**
 
