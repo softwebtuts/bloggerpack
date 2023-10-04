@@ -1,4 +1,10 @@
 /node_modules/
 /private/
+/.vscode/
+/public/
+/build/
+/dist/
+/src/defaultmarkups/
+/src/assets/styles/styles.min.css
 package-lock.json
 gulpfile.js

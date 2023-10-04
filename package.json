@@ -4,7 +4,10 @@
 	"description": "Project to create Blogger Templates",
 	"main": "gulpfile.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "npx tailwindcss -i ./src/assets/styles/tailwind.scss -o ./src/assets/styles/styles.min.css --minify && gulp build:production",
+		"dev": "npx tailwindcss -i ./src/assets/styles/tailwind.scss -o ./src/assets/styles/styles.min.css && gulp build:development",
+		"webpack:build": "webpack --mode=production",
+		"webpack:dev": "webpack --mode=development"
 	},
 	"repository": {
 		"type": "git",
@@ -43,6 +46,7 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-strip-comments": "^2.6.0",
 		"gulp-token-replace": "^1.1.5",
+		"gulp-zip": "^5.1.0",
 		"postcss": "^8.4.31",
 		"prettier": "^2.8.8",
 		"prettier-plugin-tailwindcss": "^0.1.13",
@@ -52,5 +56,19 @@
 		"webpack": "^5.88.2",
 		"webpack-cli": "^4.10.0",
 		"webpack-stream": "^7.0.0"
-	}
+	},
+	"config": {
+		"theme": {
+			"name": "Softweb Tuts",
+			"version": "0.1",
+			"author": "Muhammad Muzammil",
+			"website": "https://softwebtuts.com",
+			"demo": "https://softwebtuts.com"
+		},
+		"cdataStart": "<![CDATA[",
+		"cdataEnd": "]]>",
+		"cdataStart:alt": "/*<![CDATA[*/",
+		"cdataEnd:alt": "/*]]>*/"
+	},
+	"releasedDate": "October 4, 2023 - 18:49"
 }

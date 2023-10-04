@@ -3,24 +3,28 @@
 <html b:css="false" b:defaultwidgetversion="2" b:js="true" b:layoutsVersion="3" b:responsive="true" b:templateVersion="{{version}}" expr:class='data:blog.languageDirection + " " + data:blog.pageType' expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
   <head>
     <b:include data="blog" name="head-c" />
-
+    <script type="application/ld+json">
+      @@include("../build/scripts/json/WebSite.json")
+    </script>
     <b:if cond="!data:view.isLayoutMode">
       <!-- prettier-ignore -->
       <b:skin>{{config.cdataStart}}/*
-			* Name : {{theme_info.name}}
-			* Version : {{theme_info.version}}
-			* Release Date : {{releasedDate}}
-			* Author : {{theme_info.author}}
-			* Author Site : {{theme_info.demo}}*/
+        * Name : {{config.theme.name}}
+        * Version : {{config.theme.version}}
+        * Release Date : {{releasedDate}}
+        * Author : {{config.theme.author}}
+        * Author Site : {{config.theme.website}}
+        * Demo URL : {{config.theme.demo}}
+        */
 
-			/*-- Customize Options (Start) --
-			@@include('../src/defaultVariables.html')
-			-- Customize Options (End) --*/
+        /*-- Customize Options (Start) --
+        @@include('../src/defaultVariables.html')
+        -- Customize Options (End) --*/
 
-			/*-- CSS Variables --*/
-			@@include('../build/styles/styles.min.css')
-			{{config.cdataEnd}}
-			</b:skin>
+        /*-- CSS Variables --*/
+        @@include('../build/styles/styles.min.css')
+        {{config.cdataEnd}}
+      </b:skin>
       <b:else />
       <b:template-skin>@@include("../build/styles/layout.css")</b:template-skin>
     </b:if>
@@ -83,6 +87,6 @@
     <!-- prettier-ignore -->
     <b:tag name='script' type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'/>
     <!-- prettier-ignore -->
-    <b:tag name='script'>{{config.cdataStart:alt}}@@include('../build/scripts/bundled.min.js'){{config.cdataEnd:alt}}</b:tag>
+    <b:tag name='script'>{{config.cdataStart:alt}}@@include('../build/scripts/bundle.js'){{config.cdataEnd:alt}}</b:tag>
   </body>
 </html>
