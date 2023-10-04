@@ -5,7 +5,7 @@
 BloggerPack is a project to make Blogger Templates using advance build tools 🌟.
 This Project is maintained by [Muhammad Muzammil](https://softwebtuts.com).
 
-## 🚀 Features BloggerPack
+## 🚀 Features of BloggerPack
 
 -   ⭐ TailwindCSS Support
 -   ✅ Components Based Theme Development
