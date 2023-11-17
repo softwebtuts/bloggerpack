@@ -3,7 +3,7 @@
 # BloggerPack
 
 BloggerPack is a project to make Blogger Templates using advance build tools 🌟.
-This Project is maintained by [Muhammad Muzammil](https://softwebtuts.com).
+This Project is maintained by [Softweb Tuts](https://softwebtuts.com).
 
 ## 🚀 Features of BloggerPack
 
